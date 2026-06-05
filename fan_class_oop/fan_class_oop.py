@@ -6,7 +6,7 @@ class Fan:
     FAST = 3
 
     # Constructor
-    def __init__(self, speed=SLOW, on=True, radius=6.0, color="black"):
+    def __init__(self, speed=SLOW, on=True, radius=6.0, color="blue"):
         self.__speed = speed
         self.__on = bool(on)
         self.__radius = float(radius)
@@ -41,6 +41,7 @@ class Fan:
         return self.__color
     @color.setter
     def color(self, new_color):
+        self.__color = str(new_color)
 
 
 
