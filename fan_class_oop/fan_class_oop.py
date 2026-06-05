@@ -1,16 +1,48 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class Fan:
+    # Three constant fan speed
+    SLOW = 1
+    MEDIUM = 2
+    FAST = 3
+
+    # Constructor
+    def __init__(self, speed=SLOW, on=True, radius=6.0, color="black"):
+        self.__speed = speed
+        self.__on = bool(on)
+        self.__radius = float(radius)
+        self.__color = str(color)\
+
+    @property
+    def speed(self):
+        return self.__speed
+    @speed.setter
+    def speed(self, new_speed):
+        if new_speed in (Fan.SLOW, Fan.MEDIUM, Fan.FAST):
+            self.__speed = new_speed
+        else:
+            raise ValueError("Invalid speed")
+
+    @property
+    def is_on(self):
+        return self.__on
+    @is_on.setter
+    def is_on(self, activity):
+        self.__on = bool(activity)
+
+    @property
+    def radius(self):
+        return self.__radius
+    @radius.setter
+    def radius(self, new_radius):
+        self.__radius = float(new_radius)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+
+
+
+
